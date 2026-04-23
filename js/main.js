@@ -1,10 +1,7 @@
-/* ============================================================
-   VICTORIA POINT — Main JavaScript
-   ============================================================ */
+
 
 'use strict';
 
-// ─── Navbar ──────────────────────────────────────────────────
 (function initNavbar() {
   const navbar    = document.querySelector('.navbar');
   const hamburger = document.querySelector('.hamburger');
@@ -12,12 +9,10 @@
 
   if (!navbar) return;
 
-  // Scroll class
   window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  // Hamburger toggle
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
       const open = hamburger.classList.toggle('open');
@@ -25,7 +20,6 @@
       hamburger.setAttribute('aria-expanded', String(open));
     });
 
-    // Close on link click
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('open');
@@ -35,7 +29,6 @@
     });
   }
 
-  // Active link
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   navbar.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
@@ -45,7 +38,6 @@
   });
 })();
 
-// ─── Hero Ken-Burns ──────────────────────────────────────────
 (function initHero() {
   const hero = document.querySelector('.hero');
   if (hero) {
@@ -53,7 +45,6 @@
   }
 })();
 
-// ─── Scroll Reveal (Intersection Observer) ───────────────────
 (function initReveal() {
   const targets = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   if (!targets.length) return;
@@ -70,7 +61,6 @@
   targets.forEach(el => observer.observe(el));
 })();
 
-// ─── Counter Animation ────────────────────────────────────────
 (function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
   if (!counters.length) return;
@@ -97,7 +87,6 @@
   counters.forEach(el => observer.observe(el));
 })();
 
-// ─── Contact Form Validation ──────────────────────────────────
 (function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
@@ -125,7 +114,6 @@
     }
   }
 
-  // Live validation
   form.querySelectorAll('input, textarea, select').forEach(field => {
     field.addEventListener('input', () => clearError(field));
     field.addEventListener('blur',  () => validateField(field));
@@ -158,7 +146,6 @@
 
     if (!valid) return;
 
-    // Simulate send
     const btn = form.querySelector('.form-submit');
     btn.textContent = 'Sending…';
     btn.disabled = true;
@@ -172,7 +159,6 @@
   });
 })();
 
-// ─── Smooth scroll for anchor links ──────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
