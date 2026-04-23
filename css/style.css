@@ -42,6 +42,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: clip;
 }
 
 body {
@@ -50,6 +51,7 @@ body {
   background: var(--off-white);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -85,6 +87,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: space-between;
   height: 84px;
+  gap: 12px;
+  min-width: 0;
 }
 
 .nav-logo {
@@ -92,6 +96,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   gap: 16px;
   line-height: 1.1;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .nav-logo-mark {
@@ -114,6 +120,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-logo-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .nav-logo .logo-main {
@@ -256,6 +263,56 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .nav-logo-mark {
     width: 54px;
     height: 54px;
+  }
+
+  .nav-logo .logo-main {
+    font-size: 1.2rem;
+  }
+
+  .nav-logo .logo-sub {
+    font-size: 0.56rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    width: min(100% - 24px, var(--max-width));
+  }
+
+  .nav-inner {
+    height: 78px;
+    gap: 8px;
+  }
+
+  .nav-logo {
+    gap: 8px;
+    max-width: calc(100% - 52px);
+  }
+
+  .nav-logo-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-logo .logo-main {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .nav-logo .logo-sub {
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+  }
+
+  .hamburger {
+    flex: 0 0 auto;
+    padding: 4px;
+  }
+
+  .nav-links {
+    top: 78px;
   }
 }
 
