@@ -1648,10 +1648,9 @@ section { padding: 96px 0; }
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1.5fr;
-  gap: 40px;
-  padding-bottom: 52px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 32px;
 }
 
 .footer-brand .logo-main {
@@ -1679,7 +1678,7 @@ section { padding: 96px 0; }
   margin-bottom: 22px;
 }
 
-.footer-social { display: flex; gap: 10px; }
+.footer-social { display: flex; gap: 10px; justify-content: center; }
 
 .footer-col h4 {
   font-size: 0.72rem;
@@ -1726,7 +1725,7 @@ section { padding: 96px 0; }
   border-top: 1px solid rgba(255,255,255,0.07);
   padding: 20px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
@@ -1737,28 +1736,6 @@ section { padding: 96px 0; }
   color: rgba(255,255,255,0.3);
 }
 
-.footer-bottom a { color: var(--gold); }
-
-.footer-bottom-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-bottom-links a {
-  font-size: 0.78rem;
-  color: rgba(255,255,255,0.3);
-  transition: color var(--transition);
-}
-
-.footer-bottom-links a:hover { color: var(--gold); }
-
-@media (max-width: 900px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 580px) {
-  .footer-grid { grid-template-columns: 1fr; }
-}
 
 .reveal {
   opacity: 0;
