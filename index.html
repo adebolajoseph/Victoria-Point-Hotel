@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -63,10 +63,6 @@
       </div>
     </div>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
-  </div>
 </section>
 
 <div class="overview" aria-label="Key statistics">
@@ -119,7 +115,12 @@
       <p class="section-sub">From a peaceful night's rest to a lively birthday bash , Victoria Point has the space, the style, and the service.</p>
     </div>
 
-    <div class="services-grid stagger">
+    <div class="services-carousel reveal">
+      <button class="services-nav services-nav-prev" type="button" aria-label="Show previous service">
+        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+
+      <div class="services-grid stagger" data-services-track>
 
       
       <article class="svc-card reveal">
@@ -193,6 +194,11 @@
         </div>
       </article>
 
+      </div>
+
+      <button class="services-nav services-nav-next" type="button" aria-label="Show next service">
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
     </div>
   </div>
 </section>
