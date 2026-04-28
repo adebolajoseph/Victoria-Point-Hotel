@@ -147,7 +147,7 @@
     if (!valid) return;
 
     const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending…';
+    btn.textContent = 'Sending...';
     btn.disabled = true;
 
     setTimeout(() => {
