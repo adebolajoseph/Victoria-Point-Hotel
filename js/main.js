@@ -159,6 +159,38 @@
   });
 })();
 
+(function initServicesCarousel() {
+  const track = document.querySelector('[data-services-track]');
+  if (!track) return;
+
+  const prevBtn = document.querySelector('.services-nav-prev');
+  const nextBtn = document.querySelector('.services-nav-next');
+  const firstCard = track.querySelector('.svc-card');
+  if (!prevBtn || !nextBtn || !firstCard) return;
+
+  function getStep() {
+    const gap = parseFloat(window.getComputedStyle(track).columnGap || window.getComputedStyle(track).gap || '0');
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  function updateButtons() {
+    const maxScroll = track.scrollWidth - track.clientWidth - 4;
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft >= maxScroll;
+  }
+
+  function move(direction) {
+    track.scrollBy({ left: getStep() * direction, behavior: 'smooth' });
+  }
+
+  prevBtn.addEventListener('click', () => move(-1));
+  nextBtn.addEventListener('click', () => move(1));
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+
+  updateButtons();
+})();
+
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
