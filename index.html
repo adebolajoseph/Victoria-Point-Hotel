@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-NG">
 <head>
   <meta charset="UTF-8" />
@@ -109,7 +109,7 @@
 
 <main id="main-content">
 <section class="hero" aria-label="Hero banner">
-  <div class="hero-bg" role="img" aria-label="Luxury hotel poolside view"></div>
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-content">
@@ -184,17 +184,12 @@
       <p class="section-sub">From a peaceful night's rest to a lively birthday bash , Victoria Point has the space, the style, and the service.</p>
     </div>
 
-    <div class="services-carousel reveal">
-      <button class="services-nav services-nav-prev" type="button" aria-label="Show previous service">
-        <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
+    <div class="services-layout reveal">
+      <div class="services-grid stagger">
 
-      <div class="services-grid stagger" data-services-track>
-
-      
       <article class="svc-card reveal">
-        <div class="svc-img">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for luxury hotel room with king bed and warm lighting" loading="lazy" />
+        <div class="svc-img" style="--svc-photo: url('images/reception3.jpeg');">
+          <img src="images/reception3.jpeg" alt="Victoria Point Hotel reception area" loading="lazy" />
           <span class="svc-badge">New Rooms</span>
         </div>
         <div class="svc-body">
@@ -202,16 +197,13 @@
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
           <h3>Rooms &amp; Suites</h3>
-          <p>Spacious, air conditioned rooms with plush bedding, flat screen TVs, private bathrooms, and complimentary WiFi for a restful stay.</p>
+          <p>Comfortable private stays with air conditioning, WiFi, and attentive service.</p>
         </div>
       </article>
 
-    
-
-      
       <article class="svc-card reveal delay-1">
-        <div class="svc-img">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for decorated party hall with ambient lighting" loading="lazy" />
+        <div class="svc-img" style="--svc-photo: url('images/partyhall.jpeg');">
+          <img src="images/partyhall.jpeg" alt="Victoria Point event hall with party lighting" loading="lazy" />
           <span class="svc-badge">Popular</span>
         </div>
         <div class="svc-body">
@@ -219,57 +211,50 @@
             <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
           <h3>Party Hall Rental</h3>
-          <p>Our versatile event hall accommodates birthdays, hangouts, team gatherings, and more, fully equipped with sound, lighting, and decor support.</p>
+          <p>A polished event space for birthdays, hangouts, and private celebrations.</p>
         </div>
       </article>
 
-      
       <article class="svc-card reveal delay-2">
-        <div class="svc-img">
-          <img src="images/snooker.webp" alt="Placeholder for green snooker table with cue balls" loading="lazy" />
+        <div class="svc-img" style="--svc-photo: url('images/snooker.webp');">
+          <img src="images/snooker.webp" alt="Snooker table with cue balls at Victoria Point" loading="lazy" />
         </div>
         <div class="svc-body">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
           </div>
           <h3>Snooker Lounge</h3>
-          <p>Unwind with friends at our professionally maintained snooker tables. Relax, compete, and enjoy refreshments in a cool, stylish lounge setting.</p>
+          <p>A relaxed lounge for games, drinks, and premium downtime.</p>
         </div>
       </article>
 
-      
       <article class="svc-card reveal delay-3">
-        <div class="svc-img">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for outdoor swimming pool with blue water" loading="lazy" />
+        <div class="svc-img" style="--svc-photo: url('images/nightpool.jpg');">
+          <img src="images/nightpool.jpg" alt="Victoria Point swimming pool at night" loading="lazy" />
         </div>
         <div class="svc-body">
           <div class="svc-icon">
             <svg viewBox="0 0 24 24"><path d="M2 12h20M2 17s2-1 4-1 4 2 4 2 2-1 4-1 4 2 4 2M2 7s2-1 4-1 4 2 4 2 2-1 4-1 4 2 4 2"/></svg>
           </div>
           <h3>Swimming Pool</h3>
-          <p>Take a dip in our sparkling outdoor pool. Poolside chairs, towels, and refreshments make every swim a luxurious, refreshing experience.</p>
+          <p>A refreshing poolside escape for sunny days and calm evenings.</p>
         </div>
       </article>
 
-      
       <article class="svc-card reveal delay-4">
-        <div class="svc-img">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for gourmet food plating on a white table" loading="lazy" />
+        <div class="svc-img" style="--svc-photo: url('images/drinks3.jpeg');">
+          <img src="images/drinks3.jpeg" alt="Selection of chilled drinks available at Victoria Point Hotel" loading="lazy" />
         </div>
         <div class="svc-body">
           <div class="svc-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2s-5 2-5 8v5h5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M6 3h12l-1.2 7.2a4.9 4.9 0 01-9.6 0L6 3z"/><path d="M8 8h8"/><path d="M12 15v6"/><path d="M8 21h8"/></svg>
           </div>
-          <h3>Kitchen &amp; Dining</h3>
-          <p>Savour freshly prepared local and continental dishes in our restaurant. Room service and event catering also available to complete your stay.</p>
+          <h3>Drinks &amp; Bar</h3>
+          <p>Chilled soft drinks, wines, and premium bottles served with style.</p>
         </div>
       </article>
 
       </div>
-
-      <button class="services-nav services-nav-next" type="button" aria-label="Show next service">
-        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
-      </button>
     </div>
   </div>
 </section>
@@ -277,15 +262,7 @@
 <section class="experience" aria-labelledby="exp-heading">
   <div class="container">
     <div class="experience-inner">
-      <div class="exp-images reveal-left">
-        <div class="exp-img-main">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for elegant hotel lobby interior" loading="lazy" />
-        </div>
-        <div class="exp-img-accent">
-          <img src="images/client-image-placeholder.svg" alt="Placeholder for outdoor terrace with lounge chairs" loading="lazy" />
-        </div>
-      </div>
-      <div class="exp-text reveal-right">
+      <div class="exp-text reveal">
         <p class="section-label">Our Promise</p>
         <h2 class="section-title" id="exp-heading">Where Comfort Meets Vibrant Living</h2>
         <div class="divider"></div>
@@ -365,59 +342,34 @@
     <div class="text-center reveal">
       <p class="section-label">Guest Reviews</p>
       <h2 class="section-title" id="testi-heading">What Our Guests Say</h2>
-      <p class="section-sub">Don't just take our word for it , here's what people experience at Victoria Point.</p>
+      <p class="section-sub">Don't just take our word for it, here's what people experience at Victoria Point.</p>
     </div>
     <div class="testi-grid stagger">
       <article class="testi-card reveal">
-        <div class="testi-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
         <p class="testi-text">"We celebrated my wife's birthday at Victoria Point and it was absolutely fantastic. The hall was beautifully arranged, the food was amazing, and the staff were super attentive. 10/10!"</p>
         <div class="testi-author">
           <div class="testi-avatar"><img src="images/client-avatar-placeholder.svg" alt="Placeholder for Emeka O." loading="lazy" /></div>
           <div class="testi-author-info">
-            <p class="name">Emeka O.</p>
-            <p class="role">Event Guest</p>
+            <p class="name">John E.</p>
           </div>
         </div>
       </article>
 
       <article class="testi-card reveal delay-1">
-        <div class="testi-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="testi-text">"The rooms are clean, comfortable, and great value. I spent the weekend with the snooker lounge and pool , didn't want to leave. Victoria Point is my favorite spot now."</p>
+        <p class="testi-text">"The rooms are clean, comfortable, and great value. I spent the weekend with the snooker lounge and pool, and didn't want to leave. Victoria Point is my favorite spot now."</p>
         <div class="testi-author">
           <div class="testi-avatar"><img src="images/client-avatar-placeholder.svg" alt="Placeholder for Adaeze K." loading="lazy" /></div>
           <div class="testi-author-info">
             <p class="name">Adaeze K.</p>
-            <p class="role">Hotel Guest</p>
           </div>
         </div>
       </article>
-
       <article class="testi-card reveal delay-2">
-        <div class="testi-stars" aria-label="5 stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="testi-text">"Our team hangout at Victoria Point was the best decision. The kitchen service was prompt, the food delicious, and the whole vibe , premium yet affordable. Highly recommend!"</p>
+        <p class="testi-text">"Our team hangout at Victoria Point was the best decision. The kitchen service was prompt, the food delicious, and the whole vibe, premium yet affordable. Highly recommend!"</p>
         <div class="testi-author">
           <div class="testi-avatar"><img src="images/client-avatar-placeholder.svg" alt="Placeholder for Tunde A." loading="lazy" /></div>
           <div class="testi-author-info">
             <p class="name">Tunde A.</p>
-            <p class="role">Corporate Guest</p>
           </div>
         </div>
       </article>
@@ -453,7 +405,6 @@
         <a href="https://www.instagram.com/victoriapointhotel" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
         </a>
-        
         <a href="https://wa.me/2348166515206" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         </a>
