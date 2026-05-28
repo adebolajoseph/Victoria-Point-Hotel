@@ -92,6 +92,7 @@
   if (!form) return;
 
   const successEl = document.getElementById('formSuccess');
+  const hotelEmail = 'info@victoriapointhotelepe.com';
 
   function getField(name) {
     return form.querySelector(`[name="${name}"]`);
@@ -146,16 +147,28 @@
 
     if (!valid) return;
 
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
+    const firstName = getField('firstName').value.trim();
+    const lastName = getField('lastName').value.trim();
+    const email = getField('email').value.trim();
+    const phone = getField('phone').value.trim();
+    const enquiry = getField('enquiry');
+    const enquiryType = enquiry.options[enquiry.selectedIndex]?.text || 'General Enquiry';
+    const message = getField('message').value.trim();
+    const fullName = `${firstName} ${lastName}`.trim();
+    const body = [
+      `Name: ${fullName}`,
+      `Email: ${email}`,
+      `Phone: ${phone || 'Not provided'}`,
+      `Enquiry Type: ${enquiryType}`,
+      '',
+      message
+    ].join('\n');
 
-    setTimeout(() => {
-      form.style.display = 'none';
-      if (successEl) {
-        successEl.classList.add('show');
-      }
-    }, 1200);
+    window.location.href = `mailto:${hotelEmail}?subject=${encodeURIComponent(`Victoria Point ${enquiryType} - ${fullName}`)}&body=${encodeURIComponent(body)}`;
+    form.style.display = 'none';
+    if (successEl) {
+      successEl.classList.add('show');
+    }
   });
 })();
 

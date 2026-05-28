@@ -604,13 +604,13 @@ section { padding: 96px 0; }
 .services-preview { background: var(--cream); }
 
 .services-layout {
-  margin-top: 56px;
+  margin-top: 60px;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
+  gap: 28px;
 }
 
 .svc-card {
@@ -621,15 +621,18 @@ section { padding: 96px 0; }
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition), box-shadow var(--transition);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .svc-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
 .svc-img {
-  height: clamp(250px, 30vw, 360px);
+  aspect-ratio: 16 / 9;
+  height: auto;
   background: var(--cream);
   overflow: hidden;
   position: relative;
@@ -652,14 +655,15 @@ section { padding: 96px 0; }
 
 .svc-body {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  gap: 10px 12px;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 12px 16px;
   align-items: center;
-  padding: 18px 18px 20px;
+  padding: 26px 26px 30px;
+  flex: 1;
 }
 
 .svc-icon {
-  width: 36px; height: 36px;
+  width: 48px; height: 48px;
   background: rgba(42,127,127,0.1);
   border-radius: var(--radius-sm);
   display: flex;
@@ -668,23 +672,23 @@ section { padding: 96px 0; }
 }
 
 .svc-icon svg {
-  width: 19px; height: 19px;
+  width: 23px; height: 23px;
   stroke: var(--teal); fill: none; stroke-width: 1.8;
 }
 
 .svc-body h3 {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
+  font-size: 1.48rem;
   font-weight: 600;
   color: var(--navy);
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .svc-body p {
   grid-column: 1 / -1;
-  font-size: 0.82rem;
+  font-size: 0.96rem;
   color: var(--text-light);
-  line-height: 1.48;
+  line-height: 1.65;
   margin-bottom: 0;
 }
 
@@ -1466,6 +1470,16 @@ section { padding: 96px 0; }
   color: var(--navy);
 }
 
+.c-item-text .value a {
+  color: inherit;
+  overflow-wrap: anywhere;
+  transition: color var(--transition);
+}
+
+.c-item-text .value a:hover {
+  color: var(--teal);
+}
+
 .social-btn {
   width: 40px; height: 40px;
   border-radius: var(--radius-sm);
@@ -1599,6 +1613,12 @@ section { padding: 96px 0; }
 }
 
 .form-success p { font-size: 0.95rem; color: var(--text-light); }
+
+.form-success a {
+  color: var(--teal);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
 
 .map-section { background: var(--cream); padding: 72px 0; }
 
@@ -1794,10 +1814,6 @@ section { padding: 96px 0; }
     gap: 18px;
   }
 
-  .svc-img {
-    height: clamp(340px, 105vw, 480px);
-  }
-
   .svc-body {
     padding: 16px 16px 18px;
   }
@@ -1812,10 +1828,6 @@ section { padding: 96px 0; }
 @media (min-width: 581px) and (max-width: 900px) {
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .svc-img {
-    height: clamp(300px, 52vw, 420px);
   }
 
   .exp-features {
