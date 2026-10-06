@@ -1,5 +1,3 @@
-
-
 'use strict';
 
 (function initNavbar() {
@@ -68,6 +66,7 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
+
       const el    = entry.target;
       const end   = parseInt(el.dataset.count, 10);
       const dur   = 1600;
@@ -77,8 +76,12 @@
       const tick = () => {
         cur = Math.min(cur + step, end);
         el.textContent = cur + (el.dataset.suffix || '');
-        if (cur < end) requestAnimationFrame(tick);
+
+        if (cur < end) {
+          requestAnimationFrame(tick);
+        }
       };
+
       requestAnimationFrame(tick);
       observer.unobserve(el);
     });
@@ -92,7 +95,11 @@
   if (!form) return;
 
   const successEl = document.getElementById('formSuccess');
-  const hotelEmail = 'info@victoriapointhotelepe.com';
+
+  const hotelEmails = [
+    'info@victoriapointhotelepe.com',
+    'victoriapointhotelepe@gmail.com'
+  ];
 
   function getField(name) {
     return form.querySelector(`[name="${name}"]`);
@@ -100,7 +107,9 @@
 
   function showError(field, msg) {
     field.classList.add('error');
+
     const errEl = field.nextElementSibling;
+
     if (errEl && errEl.classList.contains('error-msg')) {
       errEl.textContent = msg;
       errEl.classList.add('show');
@@ -109,7 +118,9 @@
 
   function clearError(field) {
     field.classList.remove('error');
+
     const errEl = field.nextElementSibling;
+
     if (errEl && errEl.classList.contains('error-msg')) {
       errEl.classList.remove('show');
     }
@@ -117,32 +128,48 @@
 
   form.querySelectorAll('input, textarea, select').forEach(field => {
     field.addEventListener('input', () => clearError(field));
-    field.addEventListener('blur',  () => validateField(field));
+    field.addEventListener('blur', () => validateField(field));
   });
 
   function validateField(field) {
     const val = field.value.trim();
+
     if (field.hasAttribute('required') && !val) {
       showError(field, 'This field is required.');
       return false;
     }
-    if (field.type === 'email' && val && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+
+    if (
+      field.type === 'email' &&
+      val &&
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)
+    ) {
       showError(field, 'Please enter a valid email address.');
       return false;
     }
-    if (field.name === 'phone' && val && !/^[\d\s\+\-\(\)]{7,}$/.test(val)) {
+
+    if (
+      field.name === 'phone' &&
+      val &&
+      !/^[\d\s\+\-\(\)]{7,}$/.test(val)
+    ) {
       showError(field, 'Please enter a valid phone number.');
       return false;
     }
+
     clearError(field);
     return true;
   }
 
   form.addEventListener('submit', e => {
     e.preventDefault();
+
     let valid = true;
+
     form.querySelectorAll('input, textarea, select').forEach(field => {
-      if (!validateField(field)) valid = false;
+      if (!validateField(field)) {
+        valid = false;
+      }
     });
 
     if (!valid) return;
@@ -151,10 +178,17 @@
     const lastName = getField('lastName').value.trim();
     const email = getField('email').value.trim();
     const phone = getField('phone').value.trim();
+
     const enquiry = getField('enquiry');
-    const enquiryType = enquiry.options[enquiry.selectedIndex]?.text || 'General Enquiry';
+
+    const enquiryType =
+      enquiry.options[enquiry.selectedIndex]?.text ||
+      'General Enquiry';
+
     const message = getField('message').value.trim();
+
     const fullName = `${firstName} ${lastName}`.trim();
+
     const body = [
       `Name: ${fullName}`,
       `Email: ${email}`,
@@ -164,8 +198,16 @@
       message
     ].join('\n');
 
-    window.location.href = `mailto:${hotelEmail}?subject=${encodeURIComponent(`Victoria Point ${enquiryType} - ${fullName}`)}&body=${encodeURIComponent(body)}`;
+    const recipients = hotelEmails.join(',');
+
+    const subject =
+      `Victoria Point ${enquiryType} - ${fullName}`;
+
+    window.location.href =
+      `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
     form.style.display = 'none';
+
     if (successEl) {
       successEl.classList.add('show');
     }
@@ -175,9 +217,14 @@
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
+
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   });
 });
